@@ -133,8 +133,9 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  const str = String(value);
+  return +str[str.length - 1];
 }
 
 
@@ -149,8 +150,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
 
 /**
@@ -208,8 +209,14 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(num) {
+  if (num > 1) {
+    for (let i = 2; i <= Math.sqrt(num); i += 1) {
+      if (num % i === 0) { return false; }
+    }
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -228,6 +235,10 @@ function isPrime(/* n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(/* value, def */) {
+  // const num = +value;
+  // let res = def;
+  // res = isNaN(num) || num;
+  // return res;
   throw new Error('Not implemented');
 }
 
