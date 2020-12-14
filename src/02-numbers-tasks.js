@@ -51,15 +51,8 @@ function getCicleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  // let res;
-  // if (value1 > value2) {
-  //   res = (value1 - value2) / 2 + value2;
-  // } else {
-  //   res = (value2 - value1) / 2 + value1;
-  // }
-  // return res;
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  return ((value1 / 10 + value2 / 10) / 2) * 10;
 }
 
 /**
@@ -167,8 +160,8 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelipidedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelipidedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 /**
@@ -188,8 +181,8 @@ function getParallelipidedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return 1000 * (num / 1000).toFixed(3 - pow);
 }
 
 /**
@@ -234,12 +227,11 @@ function isPrime(num) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  // const num = +value;
-  // let res = def;
-  // res = isNaN(num) || num;
-  // return res;
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  const num = +value;
+  const res1 = Number.isNaN(num);
+  if (res1) { return def; }
+  return num;
 }
 
 module.exports = {
